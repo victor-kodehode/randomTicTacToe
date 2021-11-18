@@ -3,28 +3,19 @@ def tictactoe():
     board = [0,1,2,3,4,5,6,7,8]
     player = 1
     win = ((0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6))
+    moveset = [0,1,2,3,4,5,6,7,8]
     for time_outer in range(0,9):
         selection = randint(0,8-time_outer)
-        board_index = -1
-        for time_inner in range(0,9):
-            if (board[time_inner] < 9):
-                board_index += 1
-            if (board_index == selection):
-                board_index = time_inner
-                break
-        if (player != 1 and player != 2):
-            return 3
-        board[board_index] = player+8
+        board[moveset[selection]] = player+8
+        moveset.pop(selection)
         for i in range(0,8):
             set_ = {board[win[i][0]],board[win[i][1]],board[win[i][2]]}
             if (len(set_)==1):
                 return player
         if (player == 1):
             player = 2
-        elif (player == 2):
-            player = 1
         else:
-            return 3
+            player = 1
     return 0
 outcomes = [0,0,0,0]
 numOfGames = input("Number of games: ")
