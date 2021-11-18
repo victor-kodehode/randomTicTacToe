@@ -14,18 +14,15 @@ def tictactoe():
                 return player
         player = 3-player
     return 0
-outcomes = [0,0,0,0]
+outcomes = [0,0,0]
 numOfGames = input("Number of games: ")
-if (numOfGames.isdecimal()):
+if (numOfGames.isdecimal() and int(numOfGames) >= 0):
     numOfGames = int(numOfGames)
-    if (numOfGames > 0 and numOfGames <= 100000):
-        for x in range(0,numOfGames):
-            outcomes[tictactoe()] += 1
-        print(f"{numOfGames} games later...\nHere are the results:")
-        print(f"Player 1 wins {outcomes[1]} games.")
-        print(f"Player 2 wins {outcomes[2]} games.")
-        print(f"{outcomes[0]} games end in a tie.")
-    else:
-        print("invalid")
+    for x in range(0,numOfGames):
+        outcomes[tictactoe()] += 1
+    print(f"{numOfGames} games later...\nHere are the results:")
+    print(f"Player 1 wins {outcomes[1]} games.")
+    print(f"Player 2 wins {outcomes[2]} games.")
+    print(f"{outcomes[0]} games end in a tie.")
 else:
     print("invalid")
