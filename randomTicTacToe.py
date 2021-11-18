@@ -12,10 +12,7 @@ def tictactoe():
             set_ = {board[win[i][0]],board[win[i][1]],board[win[i][2]]}
             if (len(set_)==1):
                 return player
-        if (player == 1):
-            player = 2
-        else:
-            player = 1
+        player = 3-player
     return 0
 outcomes = [0,0,0,0]
 numOfGames = input("Number of games: ")
