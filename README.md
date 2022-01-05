@@ -4,8 +4,7 @@ tic tac toe\
 2 players\
 moves are chosen at random
 # input
-how many games do you want the program to run?\
-limited to positive integers from 1 to 10000
+how many games do you want the program to run?
 # output
 how many games did player 1 win?\
 how many games did player 2 win?\
